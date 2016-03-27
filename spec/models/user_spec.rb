@@ -1,14 +1,16 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-  it "creates a new user" do
-    harry = User.create!(name: "Harry",
-    password_digest: "password", role: "employee")
+  harry = User.create!(name: "Harry",
+  password_digest: "password", role: "employee")
 
-    expect(User.where(name: "Harry")).to eq(harry)
+  it "creates a new user" do
+    expect(User.where(name: "Harry").first).to eq(harry)
   end
 
   it "edits an existing user" do
+    expect(User.where(name: "Harry").first.role).to eq("employee")
+
     harry = User.where(name: "Harry").first
 
     harry.role = "manager"
