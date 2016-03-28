@@ -1,14 +1,31 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>WaitingForGadoeApp</title>
+  <title>Godoe <%= ("| " + @page_title) unless @page_title.nil? %></title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+<div class="content">
+  <header>
+    <%= image_tag "logo.jpg", class: "logo", alt: "logo" %>
+    <h1> Godoe's Fine Eatery </h1>
+  </header>
+  <nav>
+    <ul class="nav-list">
+      <li><%= link_to "Home", root_path %></li>
+      <li><%= link_to "Menu", root_path %></li>
+      <li class="navbar-right btn btn-primary">Login</li>
+    </ul>
+  </nav>
+  <div id="main">
+    <%= yield %>
+  </div>
+</div>
 
-<%= yield %>
-
+<footer>
+  <p>&copy; Harry Ganz 2016</p>
+</footer>
 </body>
 </html>
