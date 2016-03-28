@@ -1,31 +1,26 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-  harry = User.create!(name: "Harry",
+  harry = User.new(name: "Harry",
   password_digest: "password", role: "employee")
 
   it "creates a new user" do
-    expect(User.where(name: "Harry").first).to eq(harry)
+    expect(harry.save).to be_truthy
   end
 
   it "edits an existing user" do
-    expect(User.where(name: "Harry").first.role).to eq("employee")
-
-    harry = User.where(name: "Harry").first
+    expect(harry.role).to eq("employee")
 
     harry.role = "manager"
 
     harry.save!
 
-    expect(User.where(name: "Harry").first.role).to eq("manager")
+    expect(harry.role).to eq("manager")
   end
 
   it "removes an existing user" do
-    harry = User.where(name: "Harry").first
 
-    harry.destroy!
-
-    expect(User.where(name: "Harry").first).to be_nil
+    expect(harry.destroy!).to be_truthy
   end
 
   it "throws an validation error if user doesn't have a name" do
