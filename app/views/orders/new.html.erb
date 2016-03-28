@@ -1,0 +1,18 @@
+<%= form_for @order do |f| %>
+  <%= f.label :party_name %> <br>
+  <%= f.text_field :party_name %> <br>
+  <%= f.label :party_size %> <br>
+  <%= f.text_field :party_size %> <br>
+  <%= f.label :table_number %>
+  <%= f.text_field :table_number %>
+  <%= label_tag :user_id, "Server" %>
+  <%= f.select :user_id,
+    options_from_collection_for_select(@users, "id", "name", @user.id) %>
+  <% @items.each do |item| %>
+    <%= check_box_tag  'item_ids[]', item.id %>
+    <%= item.name %> <br>
+  <% end %>
+  <%= f.label :special %>
+  <%= f.text_field :special %>
+  <%= f.submit %>
+<% end %>

@@ -12,4 +12,5 @@ class Item < ActiveRecord::Base
   #Scopes
   scope :by_name, -> {order(:name)}
   scope :in_category, -> (cat) {where(category: cat)}
+  scope :with_ids, -> (ids) {where("id IN (?)", ids)}
 end
