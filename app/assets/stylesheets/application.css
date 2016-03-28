@@ -62,6 +62,33 @@ header h1 {
   margin: 0 1rem;
 }
 
+/* Nav Styles */
+nav {
+  background-color: #000;
+  color: #fff
+}
+
+nav > ul {
+  margin: 0;
+  list-style: none;
+}
+
+nav li {
+  margin: 0;
+  display: inline-block;
+  padding: 1em;
+}
+
+nav a {
+  text-decoration: none;
+  color: inherit;
+}
+
+nav a:hover {
+  color: #ffff66;
+}
+
+
 /* Footer Styles */
 footer {
   background-color: #E6E6E6;
