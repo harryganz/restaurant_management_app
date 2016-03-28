@@ -14,6 +14,16 @@ RSpec.describe Order, type: :model do
     expect(order1.party_name).to eq("Donner")
   end
 
+  it "gets the user for an order" do
+    expect(order1.user).to eq(user)
+  end
+
+  it "gets the items for an order" do
+    item1 = order1.items.create(name: "Penne", description: "Pasta",
+     category: "entree", price: 3.08)
+    expect(order1.items).to eq([item1])
+  end
+
   it "removes an existing order" do
     expect(order1.destroy!).to be_truthy
   end
