@@ -17,3 +17,7 @@
     <td> <%= number_to_currency @order.items.pluck(:price).reduce(:+) %> </td>
   </tr>
 </table>
+
+<%= form_tag order_path(@order.id), method: "delete" do %>
+  <%= submit_tag "Delete" %> 
+<% end %>

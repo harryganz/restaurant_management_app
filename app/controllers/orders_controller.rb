@@ -51,6 +51,10 @@ class OrdersController < ApplicationController
     end
   end
 
+  def destroy
+    Order.find(params[:id]).destroy 
+  end
+
   private
    def order_params
      params.require(:order).permit(:party_name, :party_size,
