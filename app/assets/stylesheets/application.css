@@ -44,6 +44,23 @@ h3 {
   font-size: 2em;
 }
 
+/* Button Styles */
+.btn {
+  display: inline-block;
+  padding: 0.5rem;
+}
+
+.btn-primary {
+  color: #000;
+  background-color: #B9E0A5;
+  border: 2px solid #97D077;
+  border-radius: 0.5rem;
+}
+
+.btn-primary:hover {
+  background-color: #97D077;
+}
+
 /* Header Syles */
 header {
   padding: 1em;
@@ -88,6 +105,14 @@ nav a:hover {
   color: #ffff66;
 }
 
+.navbar-right {
+  float: right;
+}
+
+nav .btn {
+  margin-top: 0.5rem;
+  margin-right: 1rem;
+}
 
 /* Footer Styles */
 footer {
