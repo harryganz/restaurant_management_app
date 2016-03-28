@@ -38,7 +38,7 @@ item5 = Item.create(name: "Chocolate Lava Cake",
 order1 = Order.new(party_name: "Donner", party_size: 8,
   table_number: 5, special: "No Peanuts", user_id: user2.id)
 order2 = Order.new(party_name: "Jones", party_size: 3,
-  table_number: 2, user_id: user1.id, completed: false)
+  table_number: 2, user_id: user1.id, completed: true)
 
 order1.items << item1
 order1.items << item2
