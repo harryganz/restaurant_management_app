@@ -1,0 +1,11 @@
+<% orders.each do |order| %>
+<tr>
+  <td><%= order.table_number %></td>
+  <td><%= time_ago_in_words(order.created_at) %></td>
+  <td>
+    <% order.items.each do |item| %>
+      <p><%= item.name %></p>
+    <% end %>
+  </td>
+  </tr>
+<% end %>

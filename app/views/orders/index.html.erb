@@ -1,0 +1,21 @@
+<h3>Incomplete Orders</h3>
+<table>
+  <tr>
+    <th> Table No. </th>
+    <th> Time </th>
+    <th> Items </th>
+  </tr>
+  <%= render partial: "row", locals: {orders: @incomplete_orders} %>
+</table>
+<h3>Completed Orders</h3>
+<table>
+  <tr>
+    <th> Table No. </th>
+    <th> Time </th>
+    <th> Items </th>
+  </tr>
+  <%= render partial: "row", locals: {orders: @complete_orders} %>
+</table>
+<ul>
+
+</ul>

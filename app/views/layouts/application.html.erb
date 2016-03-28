@@ -15,7 +15,7 @@
   <nav>
     <ul class="nav-list">
       <li><%= link_to "Home", root_path %></li>
-      <li><%= link_to "Menu", root_path %></li>
+      <li><%= link_to "Menu", items_path %></li>
       <% if logged_in? %>
         <li class="navbar-right btn btn-danger">
           <%= form_tag sessions_path, method: 'delete' do %>
