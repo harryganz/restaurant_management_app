@@ -30,17 +30,17 @@ RSpec.describe User, type: :model do
 
   it "throws an validation error if user doesn't have a name" do
     user = User.new(role: "employee", password_digest: "password")
-    expect{user.save}.to raise_error("name cannot be blank")
+    expect{user.save!}.to raise_error(ActiveRecord::RecordInvalid)
   end
 
   it "throws a validation error if user doesn't have a role" do
     user = User.new(name: "user", password_digest: "password")
-    expect{user.save}.to raise_error("role cannot be blank")
+    expect{user.save!}.to raise_error(ActiveRecord::RecordInvalid)
   end
 
   it "throws a validation error if user has a role which is not employee or manager" do
     user = User.new(role: "invalid", name: "user", password_digest: "password")
-    expect{user.save}.to raise_error("role must be employee or manager")
+    expect{user.save!}.to raise_error(ActiveRecord::RecordInvalid)
   end
 
   it "lists all the orders for a user" do
