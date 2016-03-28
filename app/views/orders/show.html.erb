@@ -1,0 +1,19 @@
+<h3> View Order #<%= @order.id %></h3>
+<p> Party Name: <%= @order.party_name %> </p>
+<p> Server: <%= @order.user.name %> </p>
+<table>
+  <tr>
+    <th>Item Name</th>
+    <th>Price</th>
+  </tr>
+  <% @order.items.each do |item| %>
+    <tr>
+      <td> <%= item.name %> </td>
+      <td> <%= number_to_currency item.price %> </td>
+    </tr>
+  <% end %>
+  <tr>
+    <td class="lead"> Total: </td>
+    <td> <%= number_to_currency @order.items.pluck(:price).reduce(:+) %> </td>
+  </tr>
+</table>
