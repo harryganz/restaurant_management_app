@@ -13,3 +13,57 @@
  *= require_tree .
  *= require_self
  */
+
+/* Sticky footer styles */
+* {
+  margin: 0;
+}
+
+html, body {
+  height: 100%;
+}
+.content {
+  min-height: 100%;
+  margin-bottom: 1.5em;
+}
+.content:after {
+  content: "";
+  display: block;
+}
+footer, .content:after {
+  height: 1.5em
+}
+/* Typography */
+body {
+  font-size: 16px;
+}
+h1 {
+  font-size: 3em;
+}
+h3 {
+  font-size: 2em;
+}
+
+/* Header Syles */
+header {
+  padding: 1em;
+  background-color: #B9E0A5;
+  border: 1px solid #97D077;
+}
+
+.logo {
+  display: inline-block;
+  width: 4em;
+  height: 4em;
+}
+
+header h1 {
+  display: inline-block;
+  margin: 0 1rem;
+}
+
+/* Footer Styles */
+footer {
+  background-color: #E6E6E6;
+  padding: 1em;
+}
