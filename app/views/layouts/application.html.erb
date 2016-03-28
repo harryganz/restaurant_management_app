@@ -16,7 +16,19 @@
     <ul class="nav-list">
       <li><%= link_to "Home", root_path %></li>
       <li><%= link_to "Menu", root_path %></li>
-      <li class="navbar-right btn btn-primary">Login</li>
+      <% if logged_in? %>
+        <li class="navbar-right btn btn-danger">
+          <%= form_tag sessions_path, method: 'delete' do %>
+            <%= submit_tag "Logout", class: "btn-unstyled" %>
+          <% end %>
+        </li>
+      <% else %>
+        <li class="navbar-right btn btn-primary">
+          <%= form_tag sessions_path, method: 'post' do %>
+            <%= submit_tag "Login", class: "btn-unstyled" %>
+          <% end %>
+        </li>
+      <% end %>
     </ul>
   </nav>
   <div id="main">
