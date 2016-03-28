@@ -1,0 +1,16 @@
+<% if category.length > 0 %>
+  <div class="menu-section">
+    <h3><%= name %></h3>
+    <ul class="menu-list">
+      <% category.each do |item| %>
+        <li class="menu-item">
+          <p class="lead"><%= item.name %></p>
+          <p>
+            <span class="emph"><%= item.description %></span> &mdash;
+          </span class="lead"> <%= number_to_currency(item.price) %> </span>
+          </p>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>

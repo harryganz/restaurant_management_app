@@ -43,6 +43,12 @@ h1 {
 h3 {
   font-size: 2em;
 }
+.lead {
+  font-weight: bold;
+}
+.emph {
+  font-style: italic;
+}
 
 /* Button Styles */
 .btn {
