@@ -8,4 +8,10 @@ class Order < ActiveRecord::Base
   validates :party_size, :table_number, numericality: {
     only_integer: true, greater_than: 0
   }
+
+  #Scopes
+  scope :is_complete, -> {where(completed: false)}
+  scope :is_incomplete, -> {where(completed: true)}
+  scope :by_time, -> {order(created_at: :desc)}
+  scope :by_table, -> {order(:table_number)}
 end
