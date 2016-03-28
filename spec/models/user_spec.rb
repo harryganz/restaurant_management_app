@@ -47,4 +47,13 @@ RSpec.describe User, type: :model do
     expect(harry.orders).to eq([])
   end
 
+  it 'has secure password' do
+    user = User.new(name: 'John', role: "manager")
+    user.password = "secure_password"
+    user.save!
+
+    expect(user.authenticate("wrong")).to be_falsy
+    expect(user.authenticate("secure_password")).to be_truthy
+  end
+
 end
