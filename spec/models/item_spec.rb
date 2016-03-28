@@ -63,4 +63,12 @@ RSpec.describe Item, type: :model do
     price: 12.88, category: "bees")
     expect{item.save!}.to raise_error(ActiveRecord::RecordInvalid)
   end
+
+  it 'lists all the orders that an item belongs to' do
+    item = Item.create!(name: "Penne Farfala",
+    description: "Penne pasta with farfala pasta",
+    price: 12.88, category: "entree")
+
+    expect(item.orders).to eq([])
+  end
 end
