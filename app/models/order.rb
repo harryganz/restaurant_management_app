@@ -10,8 +10,8 @@ class Order < ActiveRecord::Base
   }
 
   #Scopes
-  scope :is_complete, -> {where(completed: false)}
-  scope :is_incomplete, -> {where(completed: true)}
+  scope :is_complete, -> {where(completed: true)}
+  scope :is_incomplete, -> {where(completed: false)}
   scope :by_time, -> {order(created_at: :desc)}
   scope :by_table, -> {order(:table_number)}
 end
