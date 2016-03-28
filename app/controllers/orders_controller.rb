@@ -30,6 +30,27 @@ class OrdersController < ApplicationController
     @order = Order.find(params[:id])
   end
 
+  def edit
+    @order = Order.find(params[:id])
+    @users = User.all
+    @user = @order.user
+    @items = Item.all.by_name
+  end
+
+  def update
+    @order = Order.find(params[:id])
+    @items = Item.with_ids(params[:item_ids])
+    @order.items.delete_all
+    @items.each do |item|
+      @order.items << item
+    end
+    if @order.update(order_params)
+      redirect_to orders_path
+    else
+      redirect_to edit_order_path(params[:id])
+    end
+  end
+
   private
    def order_params
      params.require(:order).permit(:party_name, :party_size,
