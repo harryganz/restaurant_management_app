@@ -44,3 +44,4 @@ A manager should be able to ...
 ![Item Form](wireframes/gadoe_item_form.png)
 ![Manage Staff](wireframes/gadoe_manage_staff.png)
 ![Edit Staff](wireframes/gadoe_edit_staff.png)
+![Login](wireframes/gadoe_login.png)
