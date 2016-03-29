@@ -50,6 +50,12 @@ h3 {
   font-style: italic;
 }
 
+/* Link Styles */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
 /* Button Styles */
 .btn {
   display: inline-block;
