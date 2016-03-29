@@ -14,7 +14,15 @@
   </header>
   <nav>
     <ul class="nav-list">
-      <li><%= link_to "Home", root_path %></li>
+      <% if logged_in? %>
+        <li><%= link_to "Orders", root_path %></li>
+        <li><%= link_to "Add Order", new_order_path %></li>
+        <% if is_manager? %>
+          <li><%= link_to "Manage Staff", users_path %></li>
+        <% end %>
+      <% else %>
+        <li><%= link_to "Home", root_path %></li>
+      <% end %>
       <li><%= link_to "Menu", items_path %></li>
       <% if logged_in? %>
         <li class="navbar-right btn btn-danger">
