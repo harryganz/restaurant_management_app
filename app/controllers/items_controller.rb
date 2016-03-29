@@ -1,5 +1,7 @@
 class ItemsController < ApplicationController
 
+  before_action :require_manager, except: [:index]
+  
   @@categories = %w(appetizer entree beverage salad dessert) #TODO Move this to db
 
   def index
