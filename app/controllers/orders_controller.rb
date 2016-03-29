@@ -1,6 +1,6 @@
 class OrdersController < ApplicationController
   before_action :require_login
-  
+
   def index
     @incomplete_orders = Order.is_incomplete.by_time
     @complete_orders = Order.is_complete.by_table
@@ -55,6 +55,13 @@ class OrdersController < ApplicationController
 
   def destroy
     Order.find(params[:id]).destroy
+    redirect_to orders_path
+  end
+
+  def complete
+    @order = Order.find(params[:id])
+    @order.update(completed: true)
+    redirect_to orders_path
   end
 
   private
