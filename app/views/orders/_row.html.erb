@@ -26,8 +26,8 @@
     </td>
     <% end %>
   <td>
-    <p><%= link_to "Edit", edit_order_path(order.id) %></p>
-    <p><%= link_to "View", order_path(order.id) %></p>
+    <p><%= link_to "Edit", edit_order_path(order.id), class: "btn btn-success" %></p>
+    <p><%= link_to "View", order_path(order.id), class: "btn btn-default" %></p>
   </td>
   </tr>
 <% end %>

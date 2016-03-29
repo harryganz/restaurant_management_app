@@ -96,6 +96,20 @@ a {
   background-color: #C75050;
 }
 
+.btn-default {
+  color: #000;
+  background-color: #ddd;
+  border: 2px solid #c8c8c8;
+  border-radius: 0.5rem;
+}
+
+.btn-success {
+  color: #000;
+  background-color: #a9c4eb;
+  border: 2px solid #8ca1c1;
+  border-radius: 0.5rem;
+}
+
 /* Header Syles */
 header {
   padding: 1em;
