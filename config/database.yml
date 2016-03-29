@@ -79,7 +79,4 @@ test:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
 production:
-  <<: *default
-  database: waiting_for_gadoe_app_production
-  username: waiting_for_gadoe_app
-  password: <%= ENV['WAITING_FOR_GADOE_APP_DATABASE_PASSWORD'] %>
+  url: <%= ENV['DATABASE_URL'] %>
