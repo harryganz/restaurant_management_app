@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
 
+  before_action :require_manager, except: [:login]
+  
   @@roles = %w(employee manager) #TODO put in db
 
   def login
