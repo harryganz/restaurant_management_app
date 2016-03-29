@@ -1,0 +1,195 @@
+/* Mixin from https://css-tricks.com/snippets/sass/maintain-aspect-ratio-mixin/
+*/
+/* line 21, /home/harry/Documents/sites/waiting_for_gadoe_app/app/assets/stylesheets/welcome.css.scss */
+.four-three {
+  position: relative;
+}
+/* line 6, /home/harry/Documents/sites/waiting_for_gadoe_app/app/assets/stylesheets/welcome.css.scss */
+.four-three:before {
+  display: block;
+  content: "";
+  width: 100%;
+  padding-top: 75%;
+}
+/* line 12, /home/harry/Documents/sites/waiting_for_gadoe_app/app/assets/stylesheets/welcome.css.scss */
+.four-three > .content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+/* line 25, /home/harry/Documents/sites/waiting_for_gadoe_app/app/assets/stylesheets/welcome.css.scss */
+#jumbotron {
+  background-image: url(/assets/vegetables_on_cutting_board-dce6f780c9213c5321cd2022e22430a485a31bc3a22cc61f5474025f3b8618d3.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  max-width: 600px;
+  min-width: 300px;
+  margin: 4rem auto;
+  position: relative;
+}
+
+/* line 35, /home/harry/Documents/sites/waiting_for_gadoe_app/app/assets/stylesheets/welcome.css.scss */
+#jumbotron .btn-large {
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+}
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+
+
+ */
+
+/* Sticky footer styles */
+
+* {
+  margin: 0;
+}
+
+html, body {
+  height: 100%;
+}
+.content {
+  min-height: 100%;
+  margin-bottom: 1.5em;
+}
+.content:after {
+  content: "";
+  display: block;
+}
+footer, .content:after {
+  height: 1.5em
+}
+/* Typography */
+body {
+  font-size: 16px;
+}
+h1 {
+  font-size: 3em;
+}
+h3 {
+  font-size: 2em;
+}
+.lead {
+  font-weight: bold;
+}
+.emph {
+  font-style: italic;
+}
+
+/* Button Styles */
+.btn {
+  display: inline-block;
+  padding: 0.5rem;
+}
+
+.btn-unstyled {
+  border: none;
+  background-color: inherit;
+  font-size: inherit;
+}
+
+.btn-large {
+  display: inline-block;
+  padding: 1rem;
+  font-size: 2rem;
+}
+
+.btn-primary {
+  color: #000;
+  background-color: #B9E0A5;
+  border: 2px solid #97D077;
+  border-radius: 0.5rem;
+}
+
+.btn-primary:hover {
+  background-color: #97D077;
+}
+
+.btn-danger {
+  color: #fff;
+  background-color: #FF6666;
+  border: 2px solid #C75050;
+  border-radius: 0.5rem;
+}
+
+.btn-danger:hover {
+  background-color: #C75050;
+}
+
+/* Header Syles */
+header {
+  padding: 1em;
+  background-color: #B9E0A5;
+  border: 1px solid #97D077;
+}
+
+.logo {
+  display: inline-block;
+  width: 4em;
+  height: 4em;
+}
+
+header h1 {
+  display: inline-block;
+  margin: 0 1rem;
+}
+
+/* Nav Styles */
+nav {
+  background-color: #000;
+  color: #fff
+}
+
+nav > ul {
+  margin: 0;
+  list-style: none;
+}
+
+nav li {
+  margin: 0;
+  display: inline-block;
+  padding: 1em;
+}
+
+nav a {
+  text-decoration: none;
+  color: inherit;
+}
+
+nav a:hover {
+  color: #ffff66;
+}
+
+.navbar-right {
+  float: right;
+}
+
+nav .btn {
+  margin-top: 0.5rem;
+  margin-right: 1rem;
+}
+
+/* Main Container Styles */
+#main {
+  padding: 2em;
+}
+
+/* Footer Styles */
+footer {
+  background-color: #E6E6E6;
+  padding: 1em;
+}
