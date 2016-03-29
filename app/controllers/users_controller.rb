@@ -1,4 +1,7 @@
 class UsersController < ApplicationController
+
+  @@roles = %w(employee manager) #TODO put in db
+
   def login
   end
 
@@ -8,6 +11,7 @@ class UsersController < ApplicationController
 
   def new
       @user = User.new
+      @roles = @@roles
   end
 
   def create
@@ -21,6 +25,7 @@ class UsersController < ApplicationController
 
   def edit
     @user = User.find(params[:id])
+    @roles = @@roles
   end
 
   def update
