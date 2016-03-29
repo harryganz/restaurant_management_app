@@ -1,0 +1,15 @@
+<%= form_for @item do |f| %>
+  <%= f.label :name %> <br>
+  <%= f.text_field :name %> <br>
+  <%= f.label :description %> <br>
+  <%= f.text_field :description %> <br>
+  <%= f.label :category %> <br>
+  <%= f.select :category do %> <br>
+    <% @categories.each do |c| %> <br>
+      <%= content_tag :option, c.titleize, value: c %> <br>
+    <% end %>
+  <% end %>
+  <%= f.label :price %> <br>
+  <%= f.text_field :price %> <br>
+  <%= f.submit %>
+<% end %>

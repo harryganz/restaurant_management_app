@@ -14,9 +14,9 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :items
+  resources :items, except: :show
 
-  resources :orders 
+  resources :orders
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
