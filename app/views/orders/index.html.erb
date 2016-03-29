@@ -4,6 +4,9 @@
     <th> Table No. </th>
     <th> Time </th>
     <th> Items </th>
+    <th> Special </th>
+    <th> Completed </th>
+    <th> Actions </th>
   </tr>
   <%= render partial: "row", locals: {orders: @incomplete_orders} %>
 </table>
@@ -13,6 +16,9 @@
     <th> Table No. </th>
     <th> Time </th>
     <th> Items </th>
+    <th> Special </th>
+    <th> Clear </th>
+    <th> Actions </th>
   </tr>
   <%= render partial: "row", locals: {orders: @complete_orders} %>
 </table>
