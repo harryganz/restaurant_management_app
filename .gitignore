@@ -12,9 +12,6 @@
 !/log/.keep
 /tmp
 
-# Ignore bundler manifest
-Gemfile.lock
-
 # Ignore RVM files
 .ruby-version
 .ruby-gemset
