@@ -9,6 +9,9 @@
             <span class="emph"><%= item.description %></span> &mdash;
           </span class="lead"> <%= number_to_currency(item.price) %> </span>
           </p>
+          <% if is_manager? %>
+            <%= link_to "Edit",edit_item_path(item.id) %>
+          <% end %>
         </li>
       <% end %>
     </ul>
