@@ -22,6 +22,5 @@
   </tr>
   <%= render partial: "row", locals: {orders: @complete_orders} %>
 </table>
-<ul>
 
-</ul>
+<%= link_to "New Order", new_order_path, class: "btn-large btn-primary" %>

@@ -10,7 +10,7 @@
           </span class="lead"> <%= number_to_currency(item.price) %> </span>
           </p>
           <% if is_manager? %>
-            <%= link_to "Edit",edit_item_path(item.id) %>
+            <%= link_to "Edit",edit_item_path(item.id), class: "btn btn-success" %>
           <% end %>
         </li>
       <% end %>

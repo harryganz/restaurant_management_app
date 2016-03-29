@@ -1,5 +1,9 @@
 # Waiting For Gadoe
 
+### Visit The Site
+
+Find the live version of the site at [http://godoes.herokuapp.com/](http://godoes.herokuapp.com/)
+
 ### Description
 
 A restaurant management application, written for Gadoe, the famous

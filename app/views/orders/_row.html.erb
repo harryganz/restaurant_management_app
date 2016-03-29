@@ -1,5 +1,9 @@
 <% orders.each do |order| %>
-<tr>
+<tr
+  <% if !order.completed %>
+    class="<%= (Time.now - order.created_at) >  1200 ? "orange" : "green" %>"
+  <% end %>
+  >
   <td><%= order.table_number %></td>
   <td><%= time_ago_in_words(order.created_at) %></td>
   <td>
@@ -11,19 +15,19 @@
   <% if !order.completed %>
     <td>
     <%= form_tag complete_order_path(order.id), method: "put" do %>
-      <%= submit_tag "Complete" %>
+      <%= submit_tag "Complete", class: "btn btn-primary" %>
     <% end %>
     </td>
   <% else %>
     <td>
       <%= form_tag order_path(order.id), method: "delete" do %>
-        <%= submit_tag "Delete" %>
+        <%= submit_tag "Delete", class: "btn btn-danger" %>
       <% end %>
     </td>
     <% end %>
   <td>
-    <p><%= link_to "Edit", edit_order_path(order.id) %></p>
-    <p><%= link_to "View", order_path(order.id) %></p>
+    <p><%= link_to "Edit", edit_order_path(order.id), class: "btn btn-success" %></p>
+    <p><%= link_to "View", order_path(order.id), class: "btn btn-default" %></p>
   </td>
   </tr>
 <% end %>
