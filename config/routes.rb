@@ -16,7 +16,11 @@ Rails.application.routes.draw do
 
   resources :items, except: :show
 
-  resources :orders
+  resources :orders do
+    member do
+      put 'complete'
+    end
+  end
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

@@ -1,6 +1,6 @@
 class OrdersController < ApplicationController
   before_action :require_login
-  
+
   def index
     @incomplete_orders = Order.is_incomplete.by_time
     @complete_orders = Order.is_complete.by_table
@@ -55,6 +55,16 @@ class OrdersController < ApplicationController
 
   def destroy
     Order.find(params[:id]).destroy
+  end
+
+  def complete(value)
+    @order = Order.find(params[:id])
+    if @order.update(completed: value)
+      render :json => {data: @order, success: true}
+    else
+      render :json => {data: 'An error occurred', success: false},
+        :status => 500
+    end
   end
 
   private
