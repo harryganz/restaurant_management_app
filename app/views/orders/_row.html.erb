@@ -9,10 +9,14 @@
   </td>
   <td><%= order.special %></td>
   <% if !order.completed %>
-    <td><%= check_box_tag "completed", order.id %></td>
+    <td>
+    <%= form_tag complete_order_path(order.id), method: "put" do %>
+      <%= submit_tag "Complete" %>
+    <% end %>
+    </td>
   <% else %>
     <td>
-      <%= form_tag order_path, method: "delete" do %>
+      <%= form_tag order_path(order.id), method: "delete" do %>
         <%= submit_tag "Delete" %>
       <% end %>
     </td>

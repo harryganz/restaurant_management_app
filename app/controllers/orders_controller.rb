@@ -55,16 +55,13 @@ class OrdersController < ApplicationController
 
   def destroy
     Order.find(params[:id]).destroy
+    redirect_to orders_path
   end
 
-  def complete(value)
+  def complete
     @order = Order.find(params[:id])
-    if @order.update(completed: value)
-      render :json => {data: @order, success: true}
-    else
-      render :json => {data: 'An error occurred', success: false},
-        :status => 500
-    end
+    @order.update(completed: true)
+    redirect_to orders_path
   end
 
   private
